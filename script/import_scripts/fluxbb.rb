@@ -49,7 +49,9 @@ class ImportScripts::FluxBB < ImportScripts::Base
       "SELECT g_id id, g_title name, g_user_title title
        FROM #{FLUXBB_PREFIX}groups")
 
-    create_groups(results) do |group|
+    customgroups = results.select { |group| group['id'] > 2 }
+
+    create_groups(customgroups) do |group|
       { id: group['id'],
         name: group['name'],
         title: group['title'] }
@@ -89,7 +91,9 @@ class ImportScripts::FluxBB < ImportScripts::Base
           admin: user['group_id'] == 1 }
       end
 
-      create_group_members(results) do |user|
+      groupusers = results.select{ |user| user['group_id'] > 2 }
+
+      groupusers.each do |user|
         if user.group_id
           user_id = user_id_from_imported_user_id(user.id)
           group_id = group_id_from_imported_group_id(user.group_id)
