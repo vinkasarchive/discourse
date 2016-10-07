@@ -94,9 +94,9 @@ class ImportScripts::FluxBB < ImportScripts::Base
       groupusers = results.select{ |user| user['group_id'] > 2 }
 
       groupusers.each do |user|
-        if user.group_id
-          user_id = user_id_from_imported_user_id(user.id)
-          group_id = group_id_from_imported_group_id(user.group_id)
+        if user['group_id']
+          user_id = user_id_from_imported_user_id(user['id'])
+          group_id = group_id_from_imported_group_id(user['group_id'])
 
           if user_id && group_id
             GroupUser.find_or_create_by(user_id: user_id, group_id: group_id)
