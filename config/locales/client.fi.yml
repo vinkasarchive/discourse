@@ -429,6 +429,7 @@ fi:
       mute: "Vaimenna"
       edit: "Muokkaa asetuksia"
       download_archive: "Lataa viestini"
+      download_archive_confirm: "Haluatko varmasti ladata kaikki viestisi?"
       new_private_message: "Uusi viesti"
       private_message: "Viesti"
       private_messages: "Viestit"
@@ -475,6 +476,7 @@ fi:
 
         daily: "Lähetä päivittäin"
         individual: "Lähetä sähköpostia jokaisesta uudesta viestistä"
+        individual_no_echo: "Lähetä sähköposti jokaisesta uudesta viestistä lukuun ottamatta omiani"
         many_per_day: "Lähetä minulle sähköpostia jokaisesta uudesta viestistä (noin {{dailyEmailEstimate}} päivässä)"
         few_per_day: "Lähetä minulle sähköpostia jokaisesta uudesta viestistä (noin 2 päivässä)"
       tag_settings: "Tunnisteet"
@@ -506,9 +508,13 @@ fi:
       muted_topics_link: "Näytä vaimennetut ketjut"
       watched_topics_link: "Näytä tarkkaillut ketjut"
       automatically_unpin_topics: "Poista kiinnitetyn ketjun kiinnitys automaattisesti, kun olen selannut sen loppuun."
+      apps: "Sovellukset"
+      revoke_access: "Peru käyttöoikeus"
+      undo_revoke_access: "Peru käyttöoikeuden peruminen"
+      api_approved: "Sallitut:"
       staff_counters:
         flags_given: "hyödyllistä liputusta"
-        flagged_posts: "liputettuja viestejä"
+        flagged_posts: "liputettua viestiä"
         deleted_posts: "poistettua viestiä"
         suspensions: "hyllytyksiä"
         warnings_received: "varoituksia"
@@ -594,6 +600,7 @@ fi:
         title: "Käyttöliittymän kieli"
         instructions: "Käyttöliittymän kieli. Kieli vaihtuu sivun uudelleen lataamisen yhteydessä."
         default: "(oletus)"
+        any: "mikä tahansa"
       password_confirmation:
         title: "Salasana uudelleen"
       last_posted: "Viimeisin viesti"
@@ -651,6 +658,7 @@ fi:
         after_4_minutes: "4 minuutin jälkeen"
         after_5_minutes: "5 minuutin jälkeen"
         after_10_minutes: "10 minuutin jälkeen"
+      notification_level_when_replying: "Kun kirjoitan ketjuun, aseta se "
       invited:
         search: "kirjoita etsiäksesi kutsuja..."
         title: "Kutsut"
@@ -870,7 +878,7 @@ fi:
       not_allowed_from_ip_address: "Kirjautuminen estetty tästä IP-osoitteesta."
       admin_not_allowed_from_ip_address: "Et voi kirjautua ylläpitäjänä tästä IP-osoitteesta."
       resend_activation_email: "Klikkaa tästä lähettääksesi vahvistusviestin uudelleen."
-      sent_activation_email_again: "Lähetimme uuden vahvistusviestin sinulle osoitteeseen <b>{{sentTo}}</b>. Viestin saapumisessa voi kestää muutama minuutti, muista tarkastaa myös roskapostikansio."
+      sent_activation_email_again: "Lähetimme uuden vahvistusviestin sinulle osoitteeseen <b>{{currentEmail}}</b>. Viestin saapumisessa voi kestää muutama minuutti; muista tarkastaa myös roskapostikansio."
       to_continue: "Ole hyvä ja kirjaudu sisään"
       preferences: "Sinun täytyy olla kirjautuneena sisään muokataksesi tilisi asetuksia"
       forgot: "En muista käyttäjätilini tietoja"
@@ -1131,6 +1139,7 @@ fi:
     not_logged_in_user: 'käyttäjäsivu, jossa on tiivistelmä käyttäjän viimeaikaisesta toiminnasta sekä käyttäjäasetukset'
     current_user: 'siirry omalle käyttäjäsivullesi'
     topics:
+      new_messages_marker: "edellinen vierailu"
       bulk:
         unlist_topics: "Poista ketjuja listauksista"
         reset_read: "Palauta lukutila"
@@ -1690,6 +1699,7 @@ fi:
       email_in_disabled: "Uusien ketjujen luominen sähköpostitse on otettu pois käytöstä sivuston asetuksissa. Salliaksesi uusien ketjujen luomisen sähköpostilla, "
       email_in_disabled_click: 'ota käyttöön "email in" asetus.'
       suppress_from_homepage: "Vaimenna alue kotisivulta."
+      sort_order: "Oletusjärjestys:"
       allow_badges_label: "Salli ansiomerkkien myöntäminen tältä alueelta"
       edit_permissions: "Muokkaa oikeuksia"
       add_permission: "Lisää oikeus"
@@ -1715,6 +1725,18 @@ fi:
         muted:
           title: "Vaimennettu"
           description: "Et saa ilmoituksia uusista ketjuista näillä alueilla, eivätkä ne näy tuoreimmissa."
+      sort_options:
+        default: "oletus"
+        likes: "Tykkäykset"
+        op_likes: "Avausviestin tykkäykset"
+        views: "Katselut"
+        posts: "Viestit"
+        activity: "Toiminta"
+        posters: "Kirjoittajat"
+        category: "Alue"
+        created: "Luomisaika"
+      sort_ascending: 'Nouseva'
+      sort_descending: 'Laskeva'
     flagging:
       title: 'Kiitos avustasi yhteisön hyväksi!'
       action: 'Liputa viesti'
@@ -2304,7 +2326,6 @@ fi:
             title: "Palauta tietokanta edelliseen toimivaan tilaan"
             confirm: "Oletko varma, että haluat palauttaa tietokannan edelliseen toimivaan tilaan?"
       export_csv:
-        user_archive_confirm: "Oletko varma, että haluat ladata viestisi?"
         success: "Vienti on käynnissä. Saat ilmoituksen viestillä, kun prosessi on valmis."
         failed: "Vienti epäonnistui. Tarkista loki-tiedostot."
         rate_limit_error: "Viestit voidaan ladata kerran päivässä, yritä uudestaan huomenna."
@@ -2820,12 +2841,14 @@ fi:
           developer: 'Kehittäjä'
           embedding: "Upottaminen"
           legal: "Säännöt"
+          user_api: 'Käyttäjärajapinta'
           uncategorized: 'Muut'
           backups: "Varmuuskopiot"
           login: "Kirjautuminen"
           plugins: "Lisäosat"
           user_preferences: "Käyttäjäasetukset"
           tags: "Tunnisteet"
+          search: "Haku"
       badges:
         title: Ansiomerkit
         new_badge: Uusi ansiomerkki

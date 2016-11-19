@@ -527,10 +527,7 @@ pl_PL:
       apps: "Aplikacje"
       revoke_access: "Zablokuj dostęp"
       undo_revoke_access: "Cofnij zablokowanie dostępu"
-      api_permissions: "Uprawnienia:"
       api_approved: "Zatwierdzony:"
-      api_read: "odczyt"
-      api_read_write: "odczyt i zapis"
       staff_counters:
         flags_given: "uczynnych oflagowań"
         flagged_posts: "oflagowane wpisy"
@@ -2247,7 +2244,6 @@ pl_PL:
             label: "Wycofaj"
             title: "Wycofaj bazę danych do poprzedniego poprawnego stanu"
       export_csv:
-        user_archive_confirm: "Czy na pewno chcesz pobrać swoje wszystkie wpisy?"
         success: "Rozpoczęto eksport: otrzymasz wiadomość, gdy proces zostanie zakończony."
         failed: "Eksport zakończył się niepowodzeniem. Sprawdź logi."
         rate_limit_error: "Wpisy mogą być pobierane raz dziennie, spróbuj ponownie jutro."

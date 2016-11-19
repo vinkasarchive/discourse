@@ -71,7 +71,7 @@ export default createWidget('search-menu', {
     const contextEnabled = searchData.contextEnabled;
 
     const ctx = contextEnabled ? this.searchContext() : null;
-    const type = Ember.get(ctx, 'type');
+    const type = ctx ? Ember.get(ctx, 'type') : null;
 
     if (contextEnabled && type === 'topic') {
       return;
@@ -134,7 +134,7 @@ export default createWidget('search-menu', {
 
   searchService() {
     if (!this._searchService) {
-      this._searchService = this.container.lookup('search-service:main');
+      this._searchService = this.register.lookup('search-service:main');
     }
     return this._searchService;
   },

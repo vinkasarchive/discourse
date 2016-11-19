@@ -16,6 +16,12 @@ export default Ember.View.extend({
         Em.run.next(() => $('.modal-header a.close').click());
       }
     });
+
+    this.appEvents.on('modal:body-shown', data => {
+      if (data.title) {
+        this.set('controller.title', I18n.t(data.title));
+      }
+    });
   },
 
   @on("willDestroyElement")

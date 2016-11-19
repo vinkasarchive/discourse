@@ -51,8 +51,9 @@ export default Ember.Controller.extend(ModalFunctionality, {
   }.property('loggingIn', 'authenticate'),
 
   actions: {
-    login: function() {
+    login() {
       const self = this;
+      if (this.get('loginDisabled')) { return; }
 
       if(Ember.isEmpty(this.get('loginName')) || Ember.isEmpty(this.get('loginPassword'))){
         self.flash(I18n.t('login.blank_username_or_password'), 'error');
@@ -186,7 +187,7 @@ export default Ember.Controller.extend(ModalFunctionality, {
 
   authMessage: (function() {
     if (Ember.isEmpty(this.get('authenticate'))) return "";
-    const method = findAll(this.siteSettings, this.capabilities, this.isMobileDevice).findProperty("name", this.get("authenticate"));
+    const method = findAll(this.siteSettings, this.capabilities, this.isMobileDevice).findBy("name", this.get("authenticate"));
     if(method){
       return method.get('message');
     }
